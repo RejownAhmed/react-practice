@@ -1,0 +1,54 @@
+/* Base */
+@tailwind base;
+@import "./base/base";
+
+/* Components */
+@tailwind components;
+@import "./components/components";
+
+/* Utils */
+@tailwind utilities;
+
+/* Custom */
+html {
+  font-weight: 400;
+}
+
+// Card styles
+.card {
+  @apply w-full bg-card rounded-[20px] border border-gray-border p-8 cursor-pointer transition-all duration-200 ease-in-out shadow-card hover:shadow-card-hover;
+}
+
+.dropdown__transition_enter-active {
+  @apply transition duration-100 ease-out;
+}
+.dropdown__transition_enter-form {
+  @apply transform scale-95 opacity-0;
+}
+.dropdown__transition_enter-to {
+  @apply transform scale-100 opacity-100;
+}
+.dropdown__transition_leave-active {
+  @apply transition duration-75 ease-in;
+}
+.dropdown__transition_leave-from {
+  @apply transform scale-100 opacity-100;
+}
+.dropdown__transition_leave-to {
+  @apply transform scale-95 opacity-0;
+}
+
+//sccroll bar dsing
+::-webkit-scrollbar {
+  @apply w-full h-2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply shadow-inner rounded-lg border-gray-border;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-success rounded-lg cursor-pointer;
+}

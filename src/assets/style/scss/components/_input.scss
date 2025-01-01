@@ -1,0 +1,19 @@
+.basic__input {
+  --theme: var(--var-color-primary);
+  @apply w-full block space-y-3;
+  .label {
+    @apply tracking-wide;
+  }
+  .basic__input--container {
+    @apply relative;
+    .icon {
+      @apply absolute text-lg top-1/2 left-[22px] transform -translate-x-1/2 -translate-y-1/2;
+    }
+    .eye {
+      @apply absolute text-lg top-1/2 right-[10px] transform -translate-x-1/2 -translate-y-1/2 hover:text-primary cursor-pointer;
+    }
+    .basic__input--field {
+      @apply bg-body border border-gray-border tracking-wide py-3 pr-4 block w-full rounded-lg outline-none disabled:opacity-50 disabled:pointer-events-none focus:outline-2 focus:outline-[--theme];
+    }
+  }
+}

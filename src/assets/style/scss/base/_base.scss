@@ -1,0 +1,68 @@
+$default-font-family: "'Poppins',-apple-system,BlinkMacSystemFont,Segoe UI,'Roboto',Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif";
+$theme-colors: (
+  // Others
+  "primary": 98 164 70,
+  "secondary": 125 51 255,
+  "success": 98 164 70,
+  "warning": 255 130 0,
+  "danger": 242 19 93,
+  "dark": 37 47 74,
+  "body": 246 250 255,
+  // Body bg
+  "card": 255 255 255,
+  // Components bg
+  "card-2": 255 255 255,
+  "border": 243 244 246,
+  // Border color
+  "gray": 242 242 242,
+  // default gray color
+  "light-gray": 243 244 246
+);
+
+
+$dark-theme-colors: (
+  "dark": 204 209 213,
+  "body": 21 21 23,
+  // Body bg
+  "card": 32 32 33,
+  // Components bg
+  "gray": 49 49 50,
+  // default gray color
+  "card-2": 37 37 37,
+  "border": 31 41 55,
+  "light-gray": 75 85 99,
+);
+
+@layer base {
+  :root {
+    --font-sans: #{$default-font-family};
+    --font-family: #{$default-font-family};
+    // Define colors for tailwind
+    @each $key, $value in $theme-colors {
+      --color-#{$key}: #{$value};
+    }
+    // Define colors for general
+    @each $key, $value in $theme-colors {
+      --var-color-#{$key}: rgb(#{$value} / 1);
+    }
+
+    // Shadows
+    --shadow-card: 0px 16px 25px rgba(78, 125, 150, 0.1);
+    --shadow-card-hover: "none";
+  }
+  // Dark mode
+  [theme="dark"] {
+    // Define colors for tailwind
+    @each $key, $value in $dark-theme-colors {
+      --color-#{$key}: #{$value};
+    }
+
+    // Define colors for general
+    @each $key, $value in $dark-theme-colors {
+      --var-color-#{$key}: rgb(#{$value} / 1);
+    }
+    // Shadows
+    --shadow-card: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --shadow-card-hover: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+}
